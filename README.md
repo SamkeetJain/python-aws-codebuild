@@ -3,8 +3,6 @@
 ### Requirements
 * Amazon AWS ECR
 * Amazon AWS CodeBuild
-* Amazon AWS CodePipeline
-* Amazon AWS ECS
 
 ### Amazon Elastic Container Registry(ECR)
 On Amazon AWS select "ECR" service and click "Create repository". </br>
@@ -50,8 +48,10 @@ Logs
 ```
 CloudWatch logs - optional: true
 S3 logs - optional: false
+
+Allow AWS CodeBuild to modify this service role so it can be used with this build project: true
 ```
 Click "Create build project"
 
 ### Amazon IAM
-Attach "AmazonEC2ContainerRegistryFullAccess" to "New-Service-Role"
+Attach "AmazonEC2ContainerRegistryFullAccess" and " CloudWatchFullAccess" to "New-Service-Role"
